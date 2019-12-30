@@ -1,3 +1,5 @@
+package CS425.MPs;
+
 // Java libraries
 import java.util.*;
 import java.io.*;

@@ -1,16 +1,18 @@
+package CS425.MPs;
+
 // Java libraries
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
 public class Queryer {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException, FileNotFoundException, SocketException {
     if(args.length != 4) {
       System.err.println("Usage: java Queryer <process_number> <queries_filename> <output_filename>");
       System.exit(1);
     }
 
-    Map<String, String> env = System.getEnv();
+    Map<String, String> env = System.getenv();
 
     int processNumber = Integer.parseInt(args[1]);
     int numProcesses = Integer.parseInt(env.get("NUM_PROCESSES"));
@@ -24,8 +26,10 @@ public class Queryer {
     DatagramSocket socket = new DatagramSocket(portNumber);
     BufferedReader queryFileReader = new BufferedReader(new FileReader(queriesFilename));
     BufferedWriter outputFileWriter = new BufferedWriter(new FileWriter(outputFilename));
-
-    while((String query = queryFileReader.readLine()) != null) {
+    String query;
+    
+    /*
+    while((query = queryFileReader.readLine()) != null) {
       // Run query within query process
       // TODO: Specify log filename to query
       Runtime.exec(query);
@@ -41,6 +45,7 @@ public class Queryer {
         }
       }
     }
+    */
 
     queryFileReader.close();
     outputFileWriter.close();
