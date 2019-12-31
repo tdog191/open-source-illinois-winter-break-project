@@ -1,21 +1,49 @@
 # CS425-MPs
 Completing MPs from CS 425 as a personal project
 
-## Dataset
+## Project Structure
+
+### Main Structure
+There are three main directories for this project:
+
+1. `src/main`
+2. `src/test`
+3. `logs`
+
+All source code goes inside the `src/main` directory. All tests go inside the `src/test/` directory. The `log` directory contains sample log files for each node in the distributed system.
+
+### Gradle Files
+This project is managed with Gradle 6.0.1. The project was initialized by running `gradle init`. This initialization created the following files:
+
+1. `gradlew`
+2. `gradlew.bat`
+3. `build.gradle`
+4. `gradle` directory
+5. `settings.gradle`
+
+`gradlew` and `gradlew.bat` are Gradle wrapper executables. The former is a shell script, and the latter is a Windows batch script. These executables can be used to run Gradle commands in this project. They download Gradle 6.0.1 as needed, so no prior installation of Gradle is necessary.
+
+To add dependencies on libraries from other repositories (Maven, Ivy, etc.), declare them in `build.gradle`.
+
+`gradle.init` also generated the `src` directories and the `.gitignore` and `.gitattributes` files.
+
+## Building, Testing, and Managing the Project
+Building, testing, and management are all performed with Gradle. To run Gradle commands, use the Gradle wrapper executable corresponding to your OS (`gradlew.bat` for Windows, `gradlew` for Linux and other OS's).
+
+Here are some of the noteworthy Gradle tasks that can be run:
+
+Gradle Task | Description
+----------- | -----------
+`run` | Runs this project as a JVM application
+`assemble` | Assembles the outputs of this project.
+`build` | Assembles and tests this project.
+`clean` | Deletes the build directory.
+`javadoc` | Generates Javadoc API documentation for the main source code.
+`dependencies` | Displays all dependencies declared in root project
+`tasks` | Displays the tasks runnable from root project
+`test` | Runs the unit tests.
+
+For example, to run the test task on Linux, run `./gradlew test`.
+
+## Log Dataset
 The machine log files were created from http://almhuette-raith.at/apache-log/access.log.
-
-The other log files come from the [apache-http-logs](https://github.com/ocatak/apache-http-logs) repo. The original paper is:
-
-@article{BASSEYYAR201828,
-    title = "Detection of attack-targeted scans from the Apache HTTP Server access logs",
-    journal = "Applied Computing and Informatics",
-    volume = "14",
-    number = "1",
-    pages = "28 - 36",
-    year = "2018",
-    issn = "2210-8327",
-    doi = "https://doi.org/10.1016/j.aci.2017.04.002",
-    url = "http://www.sciencedirect.com/science/article/pii/S2210832717300169",
-    author = "Merve Baş Seyyar and Ferhat Özgür Çatak and Ensar Gül",
-    keywords = "Rule-based model, Log analysis, Scan detection, Web application security, XSS detection, SQLI detection",
-}

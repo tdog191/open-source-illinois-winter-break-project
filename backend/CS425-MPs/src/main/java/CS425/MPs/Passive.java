@@ -9,7 +9,8 @@ public class Passive {
       System.err.println("Usage: java Passive <process_number>");
       System.exit(1);
     }
-
+    
+    // TODO: Develop unit test for checking if environment variables are missing
     int process_number = Integer.parseInt(args[1]);
     String ipv4_address = System.getenv(String.format("PROCESS_NUMBER_%d_IPV4_ADDRESS", process_number));
     int portNumber = Integer.parseInt(System.getenv(String.format("PROCESS_NUMBER_%d_PORT_NUMBER", process_number)));
