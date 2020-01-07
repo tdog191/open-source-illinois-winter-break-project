@@ -1,6 +1,14 @@
 # CS425-MPs
 Completing MPs from CS 425 as a personal project
 
+## Dependencies
+
+This project uses [OpenJDK 11](https://openjdk.java.net/projects/jdk/11), the open-source implementation of Java 11. To install the JDK, run `sudo apt-get install openjdk-11-jdk`. To install the JRE, run `sudo apt-get install openjdk-11-jre`.
+
+This project is managed with Gradle 6.0.1. Visit the [User Guide](https://docs.gradle.org/6.0.1/userguide/userguide.html) for documentation on using Gradle, the [DSL Reference](https://docs.gradle.org/6.0.1/dsl/) for documentation on the Gradle API, and the [Release Notes](https://docs.gradle.org/6.0.1/release-notes.html) for documentation on the features and changes introduced in version 6.0.1.
+
+To add dependencies on libraries from other repositories (Maven, Ivy, etc.), declare them in `build.gradle`.
+
 ## Project Structure
 
 ### Main Structure
@@ -13,7 +21,7 @@ There are three main directories for this project:
 All source code goes inside the `src/main` directory. All tests go inside the `src/test/` directory. The `log` directory contains sample log files for each node in the distributed system.
 
 ### Gradle Files
-This project is managed with Gradle 6.0.1. The project was initialized by running `gradle init`. This initialization created the following files:
+The project was initialized by running `gradle init`. This initialization created the following files:
 
 1. `gradlew`
 2. `gradlew.bat`
@@ -22,8 +30,6 @@ This project is managed with Gradle 6.0.1. The project was initialized by runnin
 5. `settings.gradle`
 
 `gradlew` and `gradlew.bat` are Gradle wrapper executables. The former is a shell script, and the latter is a Windows batch script. These executables can be used to run Gradle commands in this project. They download Gradle 6.0.1 as needed, so no prior installation of Gradle is necessary.
-
-To add dependencies on libraries from other repositories (Maven, Ivy, etc.), declare them in `build.gradle`.
 
 `gradle.init` also generated the `src` directories and the `.gitignore` and `.gitattributes` files.
 
